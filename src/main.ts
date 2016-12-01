@@ -9,4 +9,12 @@ if (environment.production) {
   enableProdMode();
 }
 
-platformBrowserDynamic().bootstrapModule(AppModule);
+var bootBtn = document.getElementById('boot');
+bootBtn.addEventListener('click', boot);
+
+function boot() {
+  platformBrowserDynamic().bootstrapModule(AppModule);
+}
+
+
+

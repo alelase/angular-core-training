@@ -5,6 +5,7 @@ import { Component, OnInit, Input } from '@angular/core';
   selector: 'app-item',
   template: `
     <li>
+    <input type="checkbox">
       {{ item }}
       <button (click)="list.removeItem(item)">X</button>
     </li>
