@@ -3,9 +3,9 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
   template: `
-      <h1>Todolist</h1>
+      <h1>{{ title }}</h1>
       <input type="text" />
-      <button>add</button>
+      <button (click)="addItem('new item')">add</button>
       <ul>
         <li>list item</li>
       </ul>
@@ -24,6 +24,7 @@ export class AppComponent {
 
   public addItem(title:string){
     this.items.push(title);
+    console.log(this.items);
   }
 
   public removeItem(item: string) {
