@@ -1,11 +1,11 @@
 <h1>{{ title }}</h1>
 
-<input type="type" 
+<input type="text" 
        #itemInput 
        [placeholder]="text" />
 
 <button (click)="addItem(itemInput.value)" 
         (contextmenu)="showMenu($event)">add</button>
-        
-<app-list></app-list>        
+
+<app-list [items]="items"></app-list>        
 
