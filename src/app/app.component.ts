@@ -13,11 +13,13 @@ import { Component } from '@angular/core';
 })
 
 export class AppComponent {
-  
+
+  public title: string;  
   public items: string[];
 
   constructor(){
     this.items = [];
+    this.title = "Todolist app";
   }
 
   public addItem(title:string){
