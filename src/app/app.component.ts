@@ -1,3 +1,4 @@
+import { Todolist } from './todolist';
 import { Component } from '@angular/core';
 import { AppModule } from './app.module';
 
@@ -6,23 +7,30 @@ import { AppModule } from './app.module';
   template: `
     <app-list-header [title]="title" ></app-list-header>
 
-    <app-item-input (itemClick)="addItem($event)"
+    <app-item-input (itemClick)="list.addItem($event)"
                     [text]="text"></app-item-input>
 
-    <app-list [items]="items"></app-list>        
+    <app-list [items]="list.items"></app-list>        
   `,    
 })
 
 export class AppComponent {
   public title: string;  
-  public text: string;   
+  public text: string;
+  public list : Todolist;
+
   
-  constructor(){        
+  constructor(list: Todolist){        
     this.title = "Todolist";
-    this.text  = "add item...";    
+    this.text  = "add item...";
+    this.list = list;    
   }
 
   public showMenu(event:Event){
     event.preventDefault();    
   }  
 } 
+
+
+
+

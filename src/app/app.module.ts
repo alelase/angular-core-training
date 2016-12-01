@@ -1,3 +1,5 @@
+import { Logger } from './logger';
+import { Todolist } from './todolist';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -22,7 +24,7 @@ import { ItemComponent } from './item/item.component';
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [Todolist, Logger],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

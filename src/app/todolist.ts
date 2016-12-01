@@ -1,14 +1,20 @@
+import { Logger } from './logger';
+import { Injectable } from '@angular/core';
+
+@Injectable()
 export class Todolist {
 
     public items: string[];
+    private logger: Logger;
 
-    constructor() {
+    constructor(logger: Logger) {
         this.items = [];
+        this.logger = logger;
     }
 
     public addItem(item: string) {
         this.items.push(item);
-        console.log(this.items);
+        this.logger.log(`${new Date()}: ${item} added `)
     }
 
     public removeItem(item: string) {
