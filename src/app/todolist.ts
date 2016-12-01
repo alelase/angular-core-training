@@ -21,5 +21,4 @@ export class Todolist {
         const index = this.items.indexOf(item);
         this.items.splice(index, 1);
     }
-
 }

@@ -24,6 +24,7 @@ import { ItemComponent } from './item/item.component';
     FormsModule,
     HttpModule
   ],
+
   providers: [Todolist, Logger],
   bootstrap: [AppComponent]
 })
