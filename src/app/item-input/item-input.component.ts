@@ -1,13 +1,22 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 
 @Component({
   selector: 'app-item-input',
-  templateUrl: './item-input.component.html',
-  styleUrls: ['./item-input.component.css']
+  template: `
+      <input type="text" 
+          #itemInput 
+          [placeholder]="text" />
+          
+      <button (click)="itemClick.emit(itemInput.value)" 
+            (contextmenu)="showMenu($event)">add</button>
+   `  
 })
+
 export class ItemInputComponent  {
 
-  @Output()
-  public itemClick = new EventEmitter();
+  @Input() 
+  public text: string; 
 
+  @Output()
+  public itemClick = new EventEmitter();  
 }

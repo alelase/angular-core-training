@@ -4,14 +4,16 @@ import { AppModule } from './app.module';
 @Component({
   selector: 'app-root',
   template: `
-  <h1>{{ title }}</h1>
-  <app-item-input (itemClick)="addItem($event)"></app-item-input>
+  <app-list-header [title]="title" ></app-list-header>
+
+  <app-item-input (itemClick)="addItem($event)"
+                  [text]="text"></app-item-input>
+
   <app-list [items]="items"></app-list>        
   `,    
 })
 
 export class AppComponent {
-
   public title: string;  
   public items: string[];
   public text: string;   
