@@ -2,7 +2,7 @@
 
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.21.
 
-# Setup
+## Setup
 Clone the project, cd into the root directory and run `npm install`
 
 ## Development server
