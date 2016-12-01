@@ -5,13 +5,14 @@ import { Component } from '@angular/core';
   template: `
       <h1>{{ title }}</h1>
 
-      <input type="type"                      
+      <input type="type"             
+             #itemInput                      
              [placeholder]="text"/>
 
-      <button (click)="addItem()"
+      <button (click)="addItem(itemInput.value)"
               (contextmenu)="showMenu($event)">add</button>
       <ul>
-        <li>list item</li>
+        <li *ngFor="let item of items">{{ item }}</li>
       </ul>
       `,    
 })
@@ -20,19 +21,17 @@ export class AppComponent {
 
   public title: string;  
   public items: string[];
-  public text: string;
-  public item: string; 
+  public text: string;   
   
-
   constructor(){    
     this.items = [];
-    this.title = "Todolist app";
+    this.title = "Todolist";
     this.text = "add item...";    
   }
 
-  public addItem(){
-    this.items.push(this.item);    
-    console.log(this.items);
+  public addItem(item: string){
+    this.items.push(item);
+    console.log(this.items);            
   }
 
   public removeItem(item: string) {
