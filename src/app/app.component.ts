@@ -5,9 +5,10 @@ import { Component } from '@angular/core';
   template: `
       <h1>{{ title }}</h1>
 
-      <input type="type" [placeholder]="text"/>
+      <input type="type"                      
+             [placeholder]="text"/>
 
-      <button (click)="addItem('new item')"
+      <button (click)="addItem()"
               (contextmenu)="showMenu($event)">add</button>
       <ul>
         <li>list item</li>
@@ -20,25 +21,26 @@ export class AppComponent {
   public title: string;  
   public items: string[];
   public text: string;
+  public item: string; 
   
 
-  constructor(){
+  constructor(){    
     this.items = [];
     this.title = "Todolist app";
-    this.text = "add item...";
+    this.text = "add item...";    
   }
 
-  public addItem(title:string){
-    this.items.push(title);
+  public addItem(){
+    this.items.push(this.item);    
     console.log(this.items);
   }
 
   public removeItem(item: string) {
-    const index = this.items.indexOf(item); 
+    const index = this.items.indexOf(item);     
     this.items.splice(index, 1);
   }
 
   public showMenu(event:Event){
     event.preventDefault();    
-  }
+  }  
 } 
