@@ -4,12 +4,12 @@ import { AppModule } from './app.module';
 @Component({
   selector: 'app-root',
   template: `
-  <app-list-header [title]="title" ></app-list-header>
+    <app-list-header [title]="title" ></app-list-header>
 
-  <app-item-input (itemClick)="addItem($event)"
-                  [text]="text"></app-item-input>
+    <app-item-input (itemClick)="addItem($event)"
+                    [text]="text"></app-item-input>
 
-  <app-list [items]="items"></app-list>        
+    <app-list [items]="items"></app-list>        
   `,    
 })
 

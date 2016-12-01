@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { ListComponent } from './list/list.component';
 import { ItemInputComponent } from './item-input/item-input.component';
 import { ListHeaderComponent } from './list-header/list-header.component';
+import { ItemComponent } from './item/item.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListComponent,
     ItemInputComponent,
-    ListHeaderComponent
+    ListHeaderComponent,
+    ItemComponent
   ],
   imports: [
     BrowserModule,
