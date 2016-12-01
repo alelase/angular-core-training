@@ -4,10 +4,11 @@ import { Component } from '@angular/core';
   selector: 'app-root',
   template: `
       <h1>{{ title }}</h1>
-      <input type="text" />
+
+      <input type="type" [placeholder]="text"/>
+
       <button (click)="addItem('new item')"
-              (contextmenu)="showMenu($event)"
-      >add</button>
+              (contextmenu)="showMenu($event)">add</button>
       <ul>
         <li>list item</li>
       </ul>
@@ -18,10 +19,13 @@ export class AppComponent {
 
   public title: string;  
   public items: string[];
+  public text: string;
+  
 
   constructor(){
     this.items = [];
     this.title = "Todolist app";
+    this.text = "add item...";
   }
 
   public addItem(title:string){
