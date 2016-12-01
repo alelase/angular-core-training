@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   template: `
       <h1>{{ title }}</h1>
       <input type="text" />
-      <button (dblclick)="addItem('new item')"
+      <button (click)="addItem('new item')"
               (contextmenu)="showMenu($event)"
       >add</button>
       <ul>
