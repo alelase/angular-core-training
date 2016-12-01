@@ -1,4 +1,3 @@
-import { AngularCoreTrainingPage } from './../../e2e/app.po';
 import { Component } from '@angular/core';
 
 @Component({
