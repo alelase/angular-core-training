@@ -1,20 +1,9 @@
 import { Component } from '@angular/core';
+import { AppModule } from './app.module';
 
 @Component({
   selector: 'app-root',
-  template: `
-      <h1>{{ title }}</h1>
-
-      <input type="type"             
-             #itemInput                      
-             [placeholder]="text"/>
-
-      <button (click)="addItem(itemInput.value)"
-              (contextmenu)="showMenu($event)">add</button>
-      <ul>
-        <li *ngFor="let item of items">{{ item }}</li>
-      </ul>
-      `,    
+  templateUrl: 'app.component.html',    
 })
 
 export class AppComponent {
