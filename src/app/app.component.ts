@@ -5,7 +5,9 @@ import { Component } from '@angular/core';
   template: `
       <h1>{{ title }}</h1>
       <input type="text" />
-      <button (click)="addItem('new item')">add</button>
+      <button (dblclick)="addItem('new item')"
+              (contextmenu)="showMenu($event)"
+      >add</button>
       <ul>
         <li>list item</li>
       </ul>
@@ -30,5 +32,9 @@ export class AppComponent {
   public removeItem(item: string) {
     const index = this.items.indexOf(item); 
     this.items.splice(index, 1);
+  }
+
+  public showMenu(event:Event){
+    event.preventDefault();    
   }
 } 
