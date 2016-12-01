@@ -15,7 +15,7 @@ export class AppComponent {
   constructor(){    
     this.items = [];
     this.title = "Todolist";
-    this.text = "add item...";    
+    this.text  = "add item...";    
   }
 
   public addItem(item: string){
