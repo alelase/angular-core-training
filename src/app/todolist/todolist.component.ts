@@ -1,4 +1,4 @@
-import {Component, OnInit} from "@angular/core";
+import {Component} from "@angular/core";
 import {Item} from "./item";
 
 @Component({
@@ -15,16 +15,16 @@ export class TodolistComponent {
   constructor() {
     this.title = "TOLOZ";
     this.items = [
-        new Item('task 1'),
-        new Item('task 2'),
+      new Item('task 1'),
+      new Item('task 2'),
     ];
   }
 
-  public addItem(label:string):void {
+  public addItem(label: string): void {
     this.items.push(new Item(label));
   }
 
-  public removeItem(item:Item):void {
+  public removeItem(item: Item): void {
     const index = this.items.indexOf(item);
     this.items.splice(index, 1);
   }

@@ -1,11 +1,12 @@
-import {Component, OnInit, Input} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {Item} from "../item";
 
 @Component({
   selector: 'app-list-items',
   template: `    
     <ul class="todo-list">
-      <app-list-item></app-list-item>
+      <app-list-item *ngFor="let item of items" 
+                     [item]="item"></app-list-item>      
     </ul>
   `,
 })

@@ -2,9 +2,10 @@
 
   <div class="view">
     <input class="toggle"
+           [checked]="item.done"
            type="checkbox">
 
-    <label>Todo Tittle</label>
+    <label>{{ item.label }}</label>
 
     <button class="destroy"></button>
 
