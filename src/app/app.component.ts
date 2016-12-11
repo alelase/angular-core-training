@@ -3,7 +3,9 @@ import {Component} from "@angular/core";
 @Component({
   selector: 'app',
   template: `
-   <app-todolist></app-todolist>    
+   <app-todolist></app-todolist>        
+   <app-todolist></app-todolist>        
+   <app-todolist></app-todolist>        
   `
 })
 

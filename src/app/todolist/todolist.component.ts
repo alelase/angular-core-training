@@ -1,5 +1,7 @@
-import {Component} from "@angular/core";
-import {Item} from "./item";
+import {Component, Optional, SkipSelf} from "@angular/core";
+import {Todolist} from "./todolist";
+
+class Nir {}
 
 @Component({
   selector   : 'app-todolist',
@@ -10,20 +12,10 @@ import {Item} from "./item";
 export class TodolistComponent {
 
   public title: string;
-  public items: Item[];
+  public list: Todolist;
 
-  constructor() {
+  constructor(list: Todolist, @Optional() nir:Nir) {
     this.title = "TOLOZ";
-    this.items = [];
+    this.list  = list;
   }
-
-  public addItem(label: string): void {
-    this.items.push(new Item(label));
-  }
-
-  public removeItem(item: Item): void {
-    const index = this.items.indexOf(item);
-    this.items.splice(index, 1);
-  }
-
 }

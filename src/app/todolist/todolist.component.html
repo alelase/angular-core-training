@@ -2,12 +2,12 @@
 
   <app-list-header>
     <app-list-title [text]="title"></app-list-title>
-    <app-list-input (onSubmit)="addItem($event)"></app-list-input>
+    <app-list-input (onSubmit)="list.addItem($event)"></app-list-input>
   </app-list-header>
 
   <app-list-main>
     <app-list-toggle></app-list-toggle>
-    <app-list-items [items]="items"></app-list-items>
+    <app-list-items [items]="list.items"></app-list-items>
   </app-list-main>
 
   <app-list-footer>
