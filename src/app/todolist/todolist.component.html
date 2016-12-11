@@ -2,7 +2,7 @@
 
   <app-list-header>
     <app-list-title [text]="title"></app-list-title>
-    <app-list-input></app-list-input>
+    <app-list-input (onSubmit)="addItem($event)"></app-list-input>
   </app-list-header>
 
   <app-list-main>

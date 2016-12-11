@@ -1,15 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from "@angular/core";
 
 @Component({
   selector: 'app-list-action',
-  templateUrl: './list-action.component.html',
-  styleUrls: ['./list-action.component.css']
+  template: `  
+    <button class="clear-completed">Clear completed</button>
+  `
 })
-export class ListActionComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
+export class ListActionComponent {
 
 }

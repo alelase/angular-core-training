@@ -1,21 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, Output} from '@angular/core';
 
 @Component({
   selector: 'app-list-input',
   template: `
-    <input class="new-todo"                                                          
+    <input class="new-todo"           
+           #itemBox           
+           (keydown.enter)="onSubmit.emit(itemBox.value)"                                                   
            autofocus>
     `,
-  styleUrls: ['./list-input.component.css']
 })
-export class ListInputComponent implements OnInit {
+export class ListInputComponent  {
 
-
+  @Output()
+  public onSubmit: EventEmitter<string>;
 
   constructor() {
-  }
-
-  ngOnInit() {
+    this.onSubmit = new EventEmitter<string>();
   }
 
 }

@@ -14,10 +14,7 @@ export class TodolistComponent {
 
   constructor() {
     this.title = "TOLOZ";
-    this.items = [
-      new Item('task 1'),
-      new Item('task 2'),
-    ];
+    this.items = [];
   }
 
   public addItem(label: string): void {
