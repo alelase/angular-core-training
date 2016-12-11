@@ -2,14 +2,9 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app',
-  template:'<h1>{{ title }}</h1>'
+  template:'<h1>Angular Core Training</h1>'
 })
 
 export class AppComponent {
 
-  public title: string;
-  
-  constructor() {
-    this.title = " Hello angular";
-  }
 }
