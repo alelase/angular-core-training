@@ -2,12 +2,20 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-list-input',
-  templateUrl: './list-input.component.html',
+  template: `
+    <input class="new-todo"           
+           type="type"            
+           autofocus>
+    `,
   styleUrls: ['./list-input.component.css']
 })
 export class ListInputComponent implements OnInit {
 
-  constructor() { }
+  placeholder: string = "my place holder";
+
+  constructor() {
+
+  }
 
   ngOnInit() {
   }

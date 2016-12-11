@@ -1,13 +1,13 @@
 <section class="todoapp">
 
   <app-list-header>
-    <app-list-title></app-list-title>
+    <app-list-title [text]="title"></app-list-title>
     <app-list-input></app-list-input>
   </app-list-header>
 
   <app-list-main>
     <app-list-toggle></app-list-toggle>
-    <app-list-items></app-list-items>
+    <app-list-items [items]="items"></app-list-items>
   </app-list-main>
 
   <app-list-footer>
