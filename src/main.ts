@@ -1,20 +1,16 @@
-import './polyfills.ts';
-
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-import { enableProdMode } from '@angular/core';
-import { environment } from './environments/environment';
-import { AppModule } from './app/';
+import "./polyfills.ts";
+import {platformBrowserDynamic} from "@angular/platform-browser-dynamic";
+import {enableProdMode} from "@angular/core";
+import {environment} from "./environments/environment";
+import {AppModule} from "./app/";
 
 if (environment.production) {
   enableProdMode();
 }
 
-var bootBtn = document.getElementById('boot');
-bootBtn.addEventListener('click', boot);
 
-function boot() {
-  platformBrowserDynamic().bootstrapModule(AppModule);
-}
+platformBrowserDynamic().bootstrapModule(AppModule);
+
 
 
 
