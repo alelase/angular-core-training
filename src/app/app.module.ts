@@ -1,9 +1,8 @@
 import {BrowserModule} from "@angular/platform-browser";
 import {NgModule} from "@angular/core";
-import {FormsModule} from "@angular/forms";
-import {HttpModule} from "@angular/http";
 import {AppComponent} from "./app.component";
 import {TodolistModule} from "./todolist/todolist.module";
+import {LoginModule} from "./login/login.module";
 
 @NgModule({
   declarations: [
@@ -11,9 +10,8 @@ import {TodolistModule} from "./todolist/todolist.module";
   ],
   imports     : [
     BrowserModule,
-    FormsModule,
-    HttpModule,
-    TodolistModule
+    TodolistModule,
+    LoginModule
   ],
 
   providers: [],

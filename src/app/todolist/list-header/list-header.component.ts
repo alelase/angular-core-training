@@ -1,11 +1,11 @@
-import { Component, OnInit, Input } from '@angular/core';
+import {Component, Input} from "@angular/core";
 
 @Component({
   selector: 'app-list-header',
-  template: `<h1>{{ title }}</h1>`  
+  template: `<h1>{{ title }}</h1>`
 })
 
-export class ListHeaderComponent  {
+export class ListHeaderComponent {
 
   @Input()
   public title: string;
