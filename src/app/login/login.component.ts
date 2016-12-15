@@ -1,8 +1,13 @@
 import {Component} from "@angular/core";
-import {FormGroup, FormControl} from "@angular/forms";
+import {FormGroup, FormControl, Validators} from "@angular/forms";
+import {MalamValidaors} from "./malam-validators";
 
 @Component({
   selector: 'app-login',
+  styles  : [`
+    input.ng-invalid {background-color: red}
+    input.ng-valid {background-color: green}
+  `],
   template: `
     <h1>Login Form</h1>
     <form [formGroup]="loginForm" (ngSubmit)="login()">
@@ -10,6 +15,8 @@ import {FormGroup, FormControl} from "@angular/forms";
              name="username" 
              formControlName="username"
              placeholder="username...">
+             
+      <span *ngIf="!username.valid">Not Valid!</span>             
              
       <input type="password" 
              name="password" 
@@ -28,17 +35,27 @@ export class LoginComponent {
   private password: FormControl;
 
   constructor() {
-    this.username = new FormControl();
+    this.username = new FormControl('',
+        Validators.compose([
+          MalamValidaors.noSpace,
+          MalamValidaors.noNir
+        ]),
+    );
+
     this.password = new FormControl();
 
     this.loginForm = new FormGroup({
       username: this.username,
       password: this.password
-    })
+    });
+
+    this.username.valueChanges.subscribe( char => console.log(char) )
+    this.username.statusChanges.subscribe( status => console.log(status) )
   }
 
   public login() {
-    console.log(this.loginForm.value);
+    console.log(this.username.errors);
+
   }
 
 
