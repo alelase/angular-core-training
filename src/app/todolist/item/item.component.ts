@@ -1,3 +1,4 @@
+import { Item } from './../item';
 import { Todolist } from './../todolist';
 import { Component, OnInit, Input } from '@angular/core';
 
@@ -5,14 +6,16 @@ import { Component, OnInit, Input } from '@angular/core';
   selector: 'app-item',
   template: `
     <li>
-    <input type="checkbox">
-      {{ item }}
+    <input type="checkbox" 
+           [(ngModel)]="item.done">
+           
+      {{ item.title }}
       <button (click)="list.removeItem(item)">X</button>
     </li>
   `,
 })
 export class ItemComponent {
-  @Input() item: string;
+  @Input() item: Item;
 
   public list: Todolist;
 
