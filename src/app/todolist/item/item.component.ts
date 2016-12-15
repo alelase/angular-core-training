@@ -8,8 +8,8 @@ import { Component, OnInit, Input } from '@angular/core';
     <li>
     <input type="checkbox" 
            [(ngModel)]="item.done">
-           
-      {{ item.title }}
+
+      {{ item.title | malamUp:'!!':true }}       
       <button (click)="list.removeItem(item)">X</button>
     </li>
   `,
@@ -21,6 +21,10 @@ export class ItemComponent {
 
   constructor(list: Todolist) {
     this.list = list
+  }
+
+  public getUpperCase(){ 
+    return this.item.title.toUpperCase()        
   }
 
 }

@@ -19,7 +19,8 @@ export class Todolist {
     public addItem(title: string) {
         this.items.push({
             title: title,
-            done: false
+            done: false,
+            created: new Date()
         });
         this.storage.saveItem(this.KEY, this.items);
     }
