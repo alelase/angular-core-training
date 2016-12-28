@@ -1,5 +1,5 @@
 export interface Item {
-    title: string;
-    done: boolean;
-    created: Date
+    title?: string;
+    done?: boolean;
+    created?: Date
 }

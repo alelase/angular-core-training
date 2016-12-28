@@ -3,6 +3,7 @@ import {NgModule} from "@angular/core";
 import {AppComponent} from "./app.component";
 import {TodolistModule} from "./todolist/todolist.module";
 import {LoginModule} from "./login/login.module";
+import {ServerModule} from "./server/server.module";
 
 @NgModule({
   declarations: [
@@ -11,7 +12,8 @@ import {LoginModule} from "./login/login.module";
   imports     : [
     BrowserModule,
     TodolistModule,
-    LoginModule
+    LoginModule,
+      ServerModule
   ],
 
   providers: [],

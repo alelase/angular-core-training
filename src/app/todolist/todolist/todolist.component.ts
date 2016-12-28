@@ -1,4 +1,4 @@
-import {Component} from "@angular/core";
+import {Component, NgZone} from "@angular/core";
 import {Todolist} from "../todolist";
 
 @Component({
@@ -6,6 +6,7 @@ import {Todolist} from "../todolist";
   selector : 'app-todolist',
   template : `
     <app-list-header [title]="title" ></app-list-header>
+    
 
     <app-item-input (itemClick)="list.addItem($event)"
                     [text]="text"></app-item-input>
@@ -20,9 +21,16 @@ export class TodolistComponent {
   public text: string;
   public list: Todolist;
 
+  constructor(list: Todolist, ngzone:NgZone) {
+    this.title = "MyApp!!!!";
 
-  constructor(list: Todolist) {
-    this.title = "Todolist";
+
+    ngzone.runOutsideAngular( () => {
+      setTimeout( () => {
+        this.title = 'Ne Title';
+      },5000 );
+    });
+
     this.text  = "add item...";
     this.list  = list;
   }
