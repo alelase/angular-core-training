@@ -4,5 +4,5 @@ import {Routes} from "@angular/router";
 
 export const routes: Routes = [
   {path: 'login', component: LoginComponent},
-  {path: 'list',  component: TodolistComponent},
+  {path: 'list/:username',  component: TodolistComponent},
 ];

@@ -1,5 +1,7 @@
 import {Component, NgZone, OnDestroy} from "@angular/core";
 import {Todolist} from "../todolist";
+import {ActivatedRoute} from '@angular/router';
+
 
 @Component({
   providers: [Todolist],
@@ -25,15 +27,17 @@ export class TodolistComponent implements OnDestroy{
     console.log('TODOLIST COMPONENT DESTROYED');
   }
 
-  constructor(list: Todolist, ngzone:NgZone) {
-    this.title = "MyApp!!!!";
+  constructor(list: Todolist, ngzone:NgZone, route: ActivatedRoute) {
+
+    route.params
+        .subscribe(param => this.title = `Hello ${param.username}`);
 
 
-    ngzone.runOutsideAngular( () => {
-      setTimeout( () => {
-        this.title = 'Ne Title';
-      },5000 );
-    });
+    // ngzone.runOutsideAngular( () => {
+    //   setTimeout( () => {
+    //     this.title = 'Ne Title';
+    //   },5000 );
+    // });
 
     this.text  = "add item...";
     this.list  = list;

@@ -1,6 +1,7 @@
 import {Component, OnDestroy} from "@angular/core";
 import {FormGroup, FormControl, Validators} from "@angular/forms";
 import {MalamValidaors} from "./malam-validators";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-login',
@@ -33,6 +34,7 @@ export class LoginComponent implements OnDestroy{
   private loginForm: FormGroup;
   private username: FormControl;
   private password: FormControl;
+  private router: Router;
 
 
   ngOnDestroy(): void {
@@ -40,7 +42,8 @@ export class LoginComponent implements OnDestroy{
   }
 
 
-  constructor() {
+  constructor(router: Router) {
+    this.router   = router;
     this.username = new FormControl('',
         Validators.compose([
           MalamValidaors.noSpace,
@@ -60,8 +63,7 @@ export class LoginComponent implements OnDestroy{
   }
 
   public login() {
-    console.log(this.username.errors);
-
+    this.router.navigate(['list', this.loginForm.value.username]);
   }
 
 
