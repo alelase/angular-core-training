@@ -1,4 +1,4 @@
-import {Component, NgZone} from "@angular/core";
+import {Component, NgZone, OnDestroy} from "@angular/core";
 import {Todolist} from "../todolist";
 
 @Component({
@@ -15,11 +15,15 @@ import {Todolist} from "../todolist";
   `,
 
 })
-export class TodolistComponent {
+export class TodolistComponent implements OnDestroy{
 
   public title: string;
   public text: string;
   public list: Todolist;
+
+  ngOnDestroy(): void {
+    console.log('TODOLIST COMPONENT DESTROYED');
+  }
 
   constructor(list: Todolist, ngzone:NgZone) {
     this.title = "MyApp!!!!";

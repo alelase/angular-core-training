@@ -1,4 +1,4 @@
-import {Component} from "@angular/core";
+import {Component, OnDestroy} from "@angular/core";
 import {FormGroup, FormControl, Validators} from "@angular/forms";
 import {MalamValidaors} from "./malam-validators";
 
@@ -28,11 +28,17 @@ import {MalamValidaors} from "./malam-validators";
   `,
 })
 
-export class LoginComponent {
+export class LoginComponent implements OnDestroy{
 
   private loginForm: FormGroup;
   private username: FormControl;
   private password: FormControl;
+
+
+  ngOnDestroy(): void {
+    console.log('LOGIN COMPONENT DESTROYED');
+  }
+
 
   constructor() {
     this.username = new FormControl('',

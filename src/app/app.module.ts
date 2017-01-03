@@ -4,6 +4,8 @@ import {AppComponent} from "./app.component";
 import {TodolistModule} from "./todolist/todolist.module";
 import {LoginModule} from "./login/login.module";
 import {ServerModule} from "./server/server.module";
+import {RouterModule} from "@angular/router";
+import {routes} from "./routes";
 
 @NgModule({
   declarations: [
@@ -13,7 +15,8 @@ import {ServerModule} from "./server/server.module";
     BrowserModule,
     TodolistModule,
     LoginModule,
-      ServerModule
+    ServerModule,
+    RouterModule.forRoot(routes)
   ],
 
   providers: [],

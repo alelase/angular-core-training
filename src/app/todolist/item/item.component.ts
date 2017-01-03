@@ -1,10 +1,10 @@
-import { Item } from './../item';
-import { Todolist } from './../todolist';
-import { Component, OnInit, Input } from '@angular/core';
+import {Item} from "./../item";
+import {Todolist} from "./../todolist";
+import {Component, Input} from "@angular/core";
 
 @Component({
   selector: 'app-item',
-  styles: [`
+  styles  : [`
     .completed { text-decoration: line-through; }
   `],
   template: `
@@ -22,12 +22,12 @@ export class ItemComponent {
   public list: Todolist;
 
   constructor(list: Todolist) {
-    this.list = list    
+    this.list = list
 
   }
 
-  public getUpperCase(){ 
-    return this.item.title.toUpperCase()        
+  public getUpperCase() {
+    return this.item.title.toUpperCase()
   }
 
 }
